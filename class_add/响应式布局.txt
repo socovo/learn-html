@@ -40,3 +40,23 @@
     ( max-width: 1000px )           宽度上限
     ( orientation: landscape )      横屏
     ( orientation: portrait )       竖屏
+
+viewport视口:
+
+    <meta name-'viewport' content=''>
+    视口的作用: 在移动浏览器中, 当页面宽度超出设备, 浏览器内部虚拟的一个页面容器, 将页面容器缩放到设备这么大, 然后展示.
+    width [pixel_value|device-width] 例 width=640
+    height [pixel_value|device-width]
+    initial-scale                               初始比例
+    minimum-scale                               允许缩放的最小比例
+    maximum-scale                               允许缩放的最大比例
+    user-scalable                               是否允许缩放(yes||no或1|0)
+
+    兼容:
+    Edge模式告诉IE以最高模式渲染文档, 也就是任何IE版本都以当前版本所支持的最高级标准模式渲染, 避免版本升级造成的影响.
+    简单地说, 就是什么版本IE就用什么版本的标准模式渲染.
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+    使用以下代码强制IE使用Chrome Frame渲染, 提示用户安装Chrome Frame.
+    <meta http-equiv='X-UA-Compatible' content='chrome=1'>
+    最佳兼容模式方案, 综合考虑以上两种:
+    <meta http-equiv='X-UA-Compatible' content='IE-Edge, chrome=1'>
