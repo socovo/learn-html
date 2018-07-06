@@ -1,0 +1,19 @@
+<type>note</type>
+<class>17</class>
+<time>20180609</time>
+<title>focus</title>
+
+::focus选择器用于选择具有焦点的元素。
+
+提示: ::focus伪元素接受键盘事件(<a>)或其他用户输入的元素(<input>, <button>)。
+
+
+outline 轮廓线
+只作用于下列标签元素
+    <a> <button> <input>
+
+语法:
+outline: red solid 1px;
+outline-color: red;
+outline-style: solid;
+outline-width: 1px;

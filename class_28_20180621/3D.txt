@@ -1,0 +1,58 @@
+<type>note</type>
+<class>28</class>
+<time>20180621</time>
+<title>3D</title>
+
+透视:
+
+perspective: none/number;                               为 3D 转换元素定义透视视图并设置视距/景深
+    n 为视距/景深
+
+transform-style: flat(所有子元素在2D平面呈现)/preserve-3d(所有子元素在3D空间呈现);
+
+使用注意事项:
+
+    perspective                         属性给被旋转的元素的父级.
+    transform-style: preserve-3d;       属性给被旋转元素.
+    transiton-duration: time;           属性给被旋转元素.
+    transform-origin: ;                 属性给被旋转元素.
+
+perspective属性定义及使用说明:
+
+    多少像素的3D元素是从视图的perspective属性定义。这个属性允许你改变3D元素是怎样查看透视图。
+    定义时的perspective属性，它是一个元素的子元素，透视图，而不是元素本身。
+    注意：perspective 属性只影响 3D 转换元素。
+    提示: 请与 perspective-origin 属性一同使用该属性，这样您就能够改变 3D 元素的底部位置。
+
+perspective-origin属性定义及使用说明:
+
+    perspective-origin 属性定义 3D 元素所基于的 X 轴和 Y 轴。该属性允许您改变 3D 元素的底部位置。
+    定义时的perspective-origin属性，它是一个元素的子元素，透视图，而不是元素本身
+
+例:
+
+.stage {
+    min-width: 1200px;
+    perspective: 800px;
+}
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 400px auto 0;
+    border: 1px solid transparent;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 100px;
+    transition-duration: 5s;
+}
+.mini-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 50px auto 0;
+    border: 1px solid transparent;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 50px;
+    transition-duration: 5s;
+    transform: translateZ(50px);
+}

@@ -1,0 +1,78 @@
+<type>note</type>
+<class>17</class>
+<time>20180609</time>
+<title>表单</title>
+
+HTML 表单用于收集不同类型的用户输入。
+一个表单通常有<form></form>包含若干<input>
+
+声明一个表单:
+
+	<form name='' action='' method='get/post'></form>
+		name    表单名称
+		action  规定表单传送的位置
+		method  规定发送表单数据到后台的方法
+			属性值: get/post
+		target  规定链接打开窗口的方式
+			属性值: _self/_blank
+
+文本字段:
+
+	<input type='text' name='' placeholder='' value=''>
+		form        input元素所属的一个或多个表单
+		name        input元素的名称
+		placeholder 描述input字段的预设值描述信息
+		value       input元素的默认值
+		max         input元素的最大值
+		min         input元素的最小值
+		size        以字符计数的input元素的可见宽度
+
+密码字段:
+
+	<input type='password' name='' placeholder='' value=''>
+		form        input元素所属的一个或多个表单
+		name        input元素的名称
+		placeholder 描述input字段的预设值描述信息
+		value       input元素的默认值
+		max         input元素的最大值
+		min         input元素的最小值
+		size        以字符计数的input元素的可见宽度
+
+单选按钮:
+
+	<input type='radio' name='' checked>
+		name    单选组名
+		checked 默认选中
+		配合<label>标签写选择项说明文字
+
+复选框:
+
+	<input type='checkbox' name='' checked disabled>
+		name        单选组
+		checked     默认选中
+		disabled    此项禁止选择
+		配合<label>标签写选择项说明文字
+
+按钮:
+
+	<input type='submit' value=''>
+		value               按钮说明文字内容
+		type:
+			submit          提交按钮
+			button          普通按钮
+			reset           重置按钮
+			file            选择文件按钮
+			search          搜索按钮
+			image           图像, 可用src引入背景图像
+    
+注:<button>标签是靠JS来触发操作, 和此处的<input type='button'>不是一个东西
+
+表单结构:
+
+	<form>
+		<fieldset>
+			<legend>表单标题</legend>
+			文字<input>
+			文字<input>
+		</fieldset>
+	</form>

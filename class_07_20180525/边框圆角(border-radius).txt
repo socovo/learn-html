@@ -1,0 +1,26 @@
+﻿<type>note</type>
+<class>07</class>
+<time>20180525</time>
+<title>边框圆角(border-radius)</title>
+
+border-radius
+	
+	属性值:
+	
+	数值(半径),%
+
+	组合指定四个圆角：
+
+	四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。
+	三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角
+	两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角
+	一个值： 四个圆角值相同
+
+	单独定义四个边角:
+	
+	border-top-left-radius	定义了左上角的弧度
+	border-top-right-radius	定义了右上角的弧度
+	border-bottom-right-radius	定义了右下角的弧度
+	border-bottom-left-radius	定义了左下角的弧度
+
+	百分比定义边框可画出圆形(正方形盒子)或椭圆形(矩形盒子)

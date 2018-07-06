@@ -1,0 +1,8 @@
+<type>note</type>
+<class>add</class>
+<title>隐藏元素</title>
+
+隐藏元素可以使用display: none; 或者visibility: hidden;
+但是这两种方式会产生不同的结果.
+visibility: hidden; 会隐藏元素, 但元素仍然占用原来的空间, 会影响布局.
+display: none; 会隐藏元素, 且元素不占用空间, 即从原来的布局中消失.

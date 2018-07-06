@@ -1,0 +1,46 @@
+<type>note</type>
+<class>20</class>
+<time>20180614</time>
+<title>H5标签</title>
+
+H5结构性标签:
+
+    <header></header>       定义文档的头部
+    
+    <section>               定义文档中的区块(章节/页眉/页脚)
+        <nav></nav>         定义导航栏
+        <aside></aside>     定义侧边栏/轮播图/广告栏
+        <article></article> 定义文档中的文章部分
+    </section>
+        <section></section>
+    <section>
+    </section>
+    <footer></footer>       定义文档的底部
+
+H5语义化标签:
+
+    <hgroup>
+        <h1> what't the weather like today? </h1>
+        <h2> what's the weather like tomorrow? </h2>
+    </hgroup>
+    <figure>                用于对元素进行组合, 一般用于图片和视频
+        <figcaption>        为元素组添加标题
+            <img>
+            <video></video>
+        </figcaption>
+    </figure>
+    <time></time>           类似于span标签, 用于标记时间
+
+    <input type='text' list='data-name'>        下拉列表
+    <datalist id='data-name'>
+        <option value=''></option>
+    </datalist>
+
+    <meter min='' low='' high='' max='' value=''></meter>       测量值
+        min     进度条起始值
+        max     进度条结束值
+        value   进度条当前值
+        low     低阈值
+        high    高阈值
+
+    <progress min='' max='' value=''></progress>                进度条

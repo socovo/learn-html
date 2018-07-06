@@ -1,0 +1,60 @@
+<type>note</type>
+<class>add</class>
+<title>CSS属性书写顺序</title>
+
+1. 布局定位属性(7)
+
+    display
+    list-style
+    position
+    float
+    clear
+    visibility
+    overflow 
+    z-index
+	
+2. 自身属性(6)
+
+    box-sizing
+    width
+    height
+    margin
+    padding
+    border
+    background
+        background-color
+        bakcground-position
+        background-size
+        background-repeat
+        background-attachment
+        background-image
+    opacity
+	
+3. 字体属性(7)
+
+    color
+    font
+        font-style
+        font-variant
+        font-weight
+        font-size
+        font-height
+        font-family
+    line-height
+    text-decoration
+    text-align
+    vertical-align
+    white-sapce
+    break-word
+	
+4. 其他属性
+
+    content
+    cursor
+	
+5. CSS3属性
+
+    border-radius
+    box-shadow
+    text-shadow
+    background:linear-gradient
