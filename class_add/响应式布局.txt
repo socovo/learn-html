@@ -1,0 +1,42 @@
+<type>note</type>
+<class>add</class>
+<title>响应式布局</title>
+
+媒体查询:
+
+    link引入:
+
+        在html中可以用<link media=''>进行媒体查询并引入相应外部样式表, 语法:
+
+        <link rel='stylesheet' href='css/name.css' media='[not|only] screen/all [and] ( media feature )'>
+        media是媒体类型, 其取值有all(所有设备)/screen(彩屏设备).
+        media可使用多限定语句, 例:
+
+            media='screen and ( max-width: 1000px )
+            其他关键词还有not/only
+
+    import引入:
+
+        在<style>内部样式表中可以使用@import进行媒体查询引入相应外部样式表, 语法:
+
+        @import url('css/name.css')  [not|only] screen/all [and] ( media feature )
+
+        例:
+            @import url('css/name.css')  screen and ( max-width: 1000px );
+            注意: @import需要写在<style>最顶部.
+
+    media引入:
+
+        在外部CSS文件中可以使用@media进行媒体查询, 语法:
+
+        @meida [not|only] screen/all [and] ( media feature ) {
+            css code;
+        }
+
+媒体特性(media feature):
+
+    ( width: 500px )                宽度值
+    ( min-width: 500px )            宽度下限
+    ( max-width: 1000px )           宽度上限
+    ( orientation: landscape )      横屏
+    ( orientation: portrait )       竖屏
