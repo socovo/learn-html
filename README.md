@@ -1,0 +1,1 @@
+those are notes of learn html and css.
