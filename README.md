@@ -1,1 +1,1 @@
-those are notes of learn html and css.
+this repository contain notes of learn html and css.
