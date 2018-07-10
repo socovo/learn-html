@@ -59,4 +59,4 @@ viewport视口:
     使用以下代码强制IE使用Chrome Frame渲染, 提示用户安装Chrome Frame.
     <meta http-equiv='X-UA-Compatible' content='chrome=1'>
     最佳兼容模式方案, 综合考虑以上两种:
-    <meta http-equiv='X-UA-Compatible' content='IE-Edge, chrome=1'>
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge, chrome=1'>
