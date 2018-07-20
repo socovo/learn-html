@@ -16,7 +16,7 @@
     容器默认存在两根轴: 主轴和交叉轴, 主轴为 flex-direction 指定的 flex-item 排列方向.
     主轴的起点叫 main-start , 结束点叫 main-end .
     交叉轴的起点叫 cross-start , 结束点叫 cross-end .
-    每个项目(flex-item)占据的主轴空间叫 main-size , 交叉空间叫 cross-size .
+    每个项目(flex-item)占据的主轴空间叫 main-size , 占据的交叉空间叫 cross-size .
 
 flex-container(容器)的几个属性:
 
@@ -47,7 +47,7 @@ flex-container(容器)的几个属性:
 		baseline        其他项目的文字对齐到第一个项目的文字的基线
 		stretch         如果项目没设置高度或设置为auto, 将占满整个容器的高度.
 
-	6. align-content: 定义在多条主轴线的情况下的交叉线上的对齐方式, 如果只有1条主轴线, 则该属性不起作用, 有6个值
+	6. align-content: 定义在多条主轴线的情况下的交叉轴上的对齐方式, 如果只有1条主轴线, 则该属性不起作用, 有6个值
 		flex-start      与交叉轴的起点对齐
 		flex-end        与交叉轴的终点对齐
 		center          与交叉轴的中点对齐
@@ -60,16 +60,34 @@ flex-item(项目)的属性:
     order       定义项目的排列顺序, 数值越小, 排列越靠前, 最小值为0.
     flex-grow   定义项目的放大比例, 默认为0, 即如果存在剩余空间, 也不放大.
                 计算公式: 所占空间 = 原有空间 + 剩余空间 * [ n / ( n + m ) ]
+				原有空间指 指定flex-item原先所占的空间
+				剩余空间指 父级设定空间 - 所有flex-item相加所占的总空间
+				n为指定flex-item定义的放大比例, m为其他flex-item定义的放大比例之和
+
+				用法举例: 设定第2项宽度为其他项目的3倍
+					#main {
+						width: 350px;
+						height: 100px;
+						display: flex;
+					}
+					#main div:nth-of-type(1) {flex-grow: 1;}
+					#main div:nth-of-type(2) {flex-grow: 3;}
+					#main div:nth-of-type(3) {flex-grow: 1;}
+					#main div:nth-of-type(4) {flex-grow: 1;}
+					#main div:nth-of-type(5) {flex-grow: 1;}
 
     flex-shrink 定义项目的缩小比例, 默认为1, 即如果剩余空间不足, 该项目将缩小.
                 计算公式: 所占空间 = 原有空间 - 超出空间 * [ n / ( n + m ) ]
+				原有空间指 指定flex-item原先所占的空间
+				超出空间指 所有flex-item相加所占的总空间 - 父级设定空间
+				n为指定flex-item定义的缩小比例, m为其他flex-item定义的缩小比例之和
 
-    flex-basis  定义在分配剩余空间之前, 项目占据的主轴空间, 浏览器根据这个属性, 计算主轴是否有多余空间.
+    flex-basis  定义在分配剩余空间之前, 项目占据的主轴空间的基准值, 浏览器根据这个属性, 计算主轴是否有多余空间.
                 它的默认值为auto, 即项目的本来大小, 由内容撑开的宽度.
                 它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间, 也可以设置百分比。
 
-    flex        复合写法, 默认值是 0 1 auto, 即不放大, 缩小, 本来大小.
-                该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+    flex        复合写法, 默认值是initial (0 1 auto), 即不放大, 缩小, 本来大小.
+                该属性有两个快捷值：auto (1 1 auto) [跟随调整放大缩小] 和 none (0 0 auto) [不放大也不缩小]。
                 建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
 
     align-self  允许单个项目和其他项目有不一样的对齐方式, 可覆盖align-item属性, 默认值为auto, 表示继承父级属性.

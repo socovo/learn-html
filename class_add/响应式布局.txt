@@ -4,18 +4,18 @@
 
 媒体查询:
 
-    link引入:
+    link外部引入:
 
         在html中可以用<link media=''>进行媒体查询并引入相应外部样式表, 语法:
 
         <link rel='stylesheet' href='css/name.css' media='[not|only] screen/all [and] ( media feature )'>
         media是媒体类型, 其取值有all(所有设备)/screen(彩屏设备).
-        media可使用多限定语句, 例:
+        media可使用多限定语句(也可以不使用, 之后用media引入的方式), 例:
 
             media='screen and ( max-width: 1000px )
             其他关键词还有not/only
 
-    import引入:
+    import外部引入:
 
         在<style>内部样式表中可以使用@import进行媒体查询引入相应外部样式表, 语法:
 
