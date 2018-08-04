@@ -29,7 +29,7 @@
 
 	colspan='n'                     向右横向合并单元格
 	rowspan='n'                     向下纵向合并单元格
-	border-collapse: collapse;      合并边框线
+	border-collapse: collapse;      合并边框线(css属性)
 
 <!--表格边距-->
 
@@ -46,6 +46,6 @@
 
 <!--来自菜鸟教程-->
 
-	border='1/0'                    规定表格是否有边框
-	cell-spacing='px';              规定单元格之间的空白。
-	cell-padding='px';              规定单元边沿与其内容之间的空白。
+	border='1/0'                    规定表格是否有边框(table属性)
+	cellspacing='px';              规定单元格之间的空白。(table属性)
+	cellpadding='px';              规定单元边沿与其内容之间的空白。(table属性)
