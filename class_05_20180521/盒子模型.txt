@@ -15,7 +15,7 @@
 
 	border-color:red;
 	border-top-color:green;
-	border-tright-color:green;
+	border-right-color:green;
 	border-bottom-color:green;
 	border-left-color:green;
 
