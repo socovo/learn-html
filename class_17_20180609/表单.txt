@@ -15,6 +15,10 @@ HTML 表单用于收集不同类型的用户输入。
 			属性值: get/post
 		target  规定链接打开窗口的方式
 			属性值: _self/_blank
+		enctype     //发送表单前的编码方式, 适用于method=POST的情况
+			application/x-www-form-urlencoded               //默认方式, 适用于小数据 类如: 名字=值&名字=值&名字=值
+			ultipart-formdata                               //分块文件上传, 适用于大数据
+			text-plain                                      //纯文本方式
 
 文本字段:
 
