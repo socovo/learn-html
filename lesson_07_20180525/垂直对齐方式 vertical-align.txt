@@ -1,0 +1,27 @@
+﻿<type>note</type>
+<lesson>07</lesson>
+<time>20180525</time>
+<title>垂直对齐方式</title>
+
+vertical-align
+
+	常用属性值:
+	
+	baseline, top, middle, bottom, 百分比%
+	
+	参考页面:
+	
+	http://www.runoob.com/cssref/pr-pos-vertical-align.html
+	https://blog.csdn.net/it_queen/article/details/54729949
+
+	适用范围:
+	
+	inline, inline-block
+
+	默认对齐方式:
+	
+	vertical-align: baseline;
+
+	防止元素基线对齐的解决办法:
+	
+	破坏结构, 即使用display: block;

@@ -1,0 +1,42 @@
+﻿<type>note</type>
+<lesson>06</lesson>
+<time>20180522</time>
+<title>块级元素与内联元素</title>
+
+	div默认为块级元素, 即 display: block;
+	常见块级元素:
+	div  p  form  table  ul  ol  li  h1 - h6 等
+
+	span默认为内联元素, 即 display: inline;
+	常见内联元素:
+	a  b  big  i  u  input img label  span  br  select
+
+	display: block;	/* 块级元素 */
+	特点:
+		1.支持 width/height
+		2.独占1行
+		3.没有宽度时, 默认宽度为浏览器宽度,即100%
+		4.支持 margin/padding
+		5.支持 margin: auto;
+
+	display: inline;	/* 行内元素/内联元素 */
+	特点:
+		1.不支持 width/height
+		2.横排显示
+		3.默认内容撑开宽度, 设置宽度值无效
+		4.不支持垂直方向的margin, 支持水平方向的margin; 支持padding, 但是垂直方向的padding会导致自身排版出现问题
+		5.不支持 margin: auto;
+
+	display: inline-block;
+	特点:
+		1.支持 width/height
+		2.横排显示
+		3.没有宽度时默认内容撑开宽度
+		4.支持 margin/padding;
+		5.不支持 margin: auto;
+
+	注意问题:
+		display: inline 或 display: inline-block 在元素之间会解析空格(代码中的换行符), 出现一个空格间隙
+	解决办法:
+		1. 去掉换行符, 即不换行. 后期压缩代码会自动去掉换行符.
+		2. 父级 font-size:0; 子级重新设置 font-size: x;(不推荐)

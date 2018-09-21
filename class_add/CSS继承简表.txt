@@ -1,9 +1,0 @@
-<class>add</class>
-<class>add</class>
-<title>CSS继承简表</title>
-
-text-align
-color
-word-spacing
-word-break
-white-spacing
