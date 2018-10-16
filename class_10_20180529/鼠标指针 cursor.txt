@@ -13,6 +13,6 @@
 	
 	自定义cursor:
 		支持文件类型:.cur,.png,.jpg):
-		div/class name {
+		.class-name {
 			cursor: url('文件路径1'), url('备用文件路径2'), auto;
 		}

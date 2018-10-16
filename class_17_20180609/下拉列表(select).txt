@@ -7,7 +7,7 @@
 
 <select name='' size='' form='' required>
     <option value='' selected>选项1</option>        selected表示默认选中
-    <option value=''>选项2</option>                 value是后台提交给表单的改选项名称
+    <option value=''>选项2</option>                 value是后台提交给表单的选项名称
     <option value=''>选项3</option>
     <option value=''>选项4</option>
     <option value=''>选项5</option>

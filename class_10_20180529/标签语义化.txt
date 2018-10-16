@@ -4,7 +4,9 @@
 <title>标签语义化</title>
 
 	<header></header>
-	<section></section>
+	<main>
+		<hgroup></hgroup>
+		<section></section>
+		<article></article>
+	</main>
 	<footer></footer>
-	<article></article>
-	<hgroup></hgroup>

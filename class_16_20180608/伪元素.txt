@@ -13,7 +13,7 @@
 伪元素::after和::before
 	::after		在选定内容前增加内容
 	::before	在选定内容后增加内容
-    增加的内容必须要卸载content: 属性里, 必要时可改变为块级或内联元素.
+    增加的内容必须要作为content: 的属性值, 必要时可改变为块级或内联元素.
 	::after {
 		display: inline/block;
 		content: '';

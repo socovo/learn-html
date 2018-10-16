@@ -25,7 +25,7 @@
 	border-top-width:4px;
 	border-right-width:4px;
 	border-bottom-width:4px;
-	border-bottom-width:4px;
+	border-left-width:4px;
 
 单独更改边框线样式:
 
@@ -75,12 +75,12 @@
 
 	1.标准盒模型 content-box
 		box-sizing:content-box;
-		content-box：设定的是内容区宽度
+		content-box：设定宽度的是内容区的宽度
 		实际宽度=左外边距+左边框+左内边距+内容区宽度+右内边距+右边框+右外边距
 		实际高度=上外边距+上边框+上内边距+内容区宽度+下内边距+下边框+下外边距
 
 	2.怪异盒模型 border-box
 		box-sizing:border-box;
-		border-box：设定的是整个盒子大小(不包含外边距)，内容区的大小会变
+		border-box：设定的宽度是整个盒子的宽度(不包含外边距)，内容区的大小会变
 		设定宽度=左边框+左内边距+内容区宽度+右内边距+右边框(注:不包含外边距)
 		设定高度=上边框+上内边距+内容区宽度+下内边距+下边框(注:不包含外边距)

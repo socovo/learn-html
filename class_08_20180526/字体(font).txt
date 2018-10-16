@@ -22,14 +22,14 @@ http://www.runoob.com/w3cnote/px-em-rem-different.html
 
 	字体粗细:
 	
-	font-weight:normal/bold/bloder/lighter/数值;
+	font-weight:normal/bold/bolder/lighter/数值;
 	数值400等同于normal,数值700等同于bold
 
 	字体类型:
 	
 	font-family:默认值取决于浏览器;
-	用于某个元素的字体族名称或/及类族名称的一个优先表
-	font-family 可以把多个字体名称作为一个"回退"系统来保存。如果浏览器不支持第一个字体，则会尝试下一个
+	用于某个元素的字体族名称或类族名称的一个优先表
+	font-family 可以把多个字体名称作为一个优先级表保存。如果浏览器不支持前一个字体，则会尝试下一个
 	有两种类型的字体系列名称:
 	family-name - 指定的系列名称：具体字体的名称，比如："times"、"courier"、"arial"
 	generic-family - 通常字体系列名称：比如："serif"、"sans-serif"、"cursive"、"fantasy"、"monospace"
@@ -42,10 +42,9 @@ http://www.runoob.com/w3cnote/px-em-rem-different.html
 	
 	font-variant:normal(默认)/small-caps(小型大写)/inherit(父级继承);
 
-	行高:
+	行高(line-height属性设置行与行之间的空间):
 	
 	line-height:normal/倍数/像素值/百分比/父级继承
-	line - height属性设置行与行之间的空间
 
 	值		描述
 	normal	默认。设置合理的行间距

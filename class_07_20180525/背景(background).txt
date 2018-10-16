@@ -7,48 +7,45 @@ background
 
 	背景图:
 	
-	background-image: url('图片路径');
+		background-image: url('图片路径');
 
 	背景图平铺:
 	
-	background-repeat:
-	no-repeat, repeat-x, repeat-y
+		background-repeat: no-repeat/repeat-x/repeat-y
 
 	背景图大小:
 	
-	属性值:px, %, cover, contain
-	
-	background-size: 10px 10px;	
-	background-size: 100%;		(等比例缩放填满X轴)
-	background-size: 100% 100%;	(分开填满父级盒子的大小, 比例不同会变形)
-	background-size: contain;		(等比例缩放到父级盒子最小边大小, 即可能有地方空白)
-	background-size: cover;	(等比例缩放到父级盒子最大边大小, 即可能图片只显示一部分)
+		属性值:px, %, cover, contain
+		
+		background-size: 10px 10px;	
+		background-size: 100%;			(等比例缩放填满水平方向, 垂直方向可能会遮挡)
+		background-size: 100% 100%;		(分开填满父级盒子的大小, 可能会变形)
+		background-size: contain;		(等比例缩放到父级盒子最小边大小, 即可能有地方空白)
+		background-size: cover;			(等比例缩放到父级盒子最大边大小, 即可能图片只显示一部分)
 
-	背景定位:
-	
-	background-position:
+	背景定位(background-position):
 
-	值		描述
-	left top
-	left center
-	left bottom
-	right top
-	right center
-	right bottom
-	center top
-	center center
-	center bottom			如果仅指定一个关键字，其他值将会是"center"
-	x% y%					第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。
-							如果仅指定了一个值，其他值将是50％。默认值为：0％0％
-	x pos y pos				第一个值是水平位置，第二个值是垂直。左上角是0。
-							单位可以是像素（0px0px）或任何其他 CSS单位。
-							如果仅指定了一个值，其他值将是50％。你可以混合使用％和positions
-	inherit					指定background-position属性设置应该从父元素继承
+		值						描述
+		left top
+		left center
+		left bottom
+		right top
+		right center
+		right bottom
+		center top
+		center center
+		center bottom			如果仅指定一个关键字，其他值将会是"center"
+		x% y%					第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。
+								如果仅指定了一个值，其他值将是50％。默认值为：0％0％
+		x pos y pos				第一个值是水平位置，第二个值是垂直。左上角是0。
+								单位可以是像素（0px0px）或任何其他 CSS单位。
+								如果仅指定了一个值，其他值将是50％。你可以混合使用％和positions
+		inherit					指定background-position属性设置应该从父元素继承
 
 	背景图固定:
 	
-	background-attachment: fixed;
+		background-attachment: fixed;
 
 	综合写法:
 	
-	background:背景颜色 背景图片 position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+		background:背景颜色 背景图片 position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
