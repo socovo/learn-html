@@ -1,0 +1,60 @@
+﻿<type>note</type>
+<lesson>08</lesson>
+<time>20180526</time>
+<title>字体(font)</title>
+
+相关参考页面
+http://www.runoob.com/cssref/pr-font-font.html
+http://www.runoob.com/w3cnote/px-em-rem-different.html
+
+	字体颜色:
+	
+	color:#000000/red;
+
+	字体大小:
+	
+	font-size:百分比/倍数em/倍数rem;
+	任意浏览器的默认字体高都是16px,所有未经调整的浏览器都符合:1em=16px
+	百分比/em基于自身或父级继承,所以单位大小不固定
+	rem是基于html根元素,集相对大小和绝对大小的优点于一身
+	对于IE8及更早版本不支持它的浏览器，应对方法是多写一个绝对单位的声明:
+	p {font-size:16px; font-size:1rem;}
+
+	字体粗细:
+	
+	font-weight:normal/bold/bolder/lighter/数值;
+	数值400等同于normal,数值700等同于bold
+
+	字体类型:
+	
+	font-family:默认值取决于浏览器;
+	用于某个元素的字体族名称或类族名称的一个优先表
+	font-family 可以把多个字体名称作为一个优先级表保存。如果浏览器不支持前一个字体，则会尝试下一个
+	有两种类型的字体系列名称:
+	family-name - 指定的系列名称：具体字体的名称，比如："times"、"courier"、"arial"
+	generic-family - 通常字体系列名称：比如："serif"、"sans-serif"、"cursive"、"fantasy"、"monospace"
+
+	字体样式:
+	
+	font-style:normal(默认)/italic(斜体)/oblique(倾斜)/inherit(父级继承);
+	
+	小型大写字体:
+	
+	font-variant:normal(默认)/small-caps(小型大写)/inherit(父级继承);
+
+	行高(line-height属性设置行与行之间的空间):
+	
+	line-height:normal/倍数/像素值/百分比/父级继承
+
+	值		描述
+	normal	默认。设置合理的行间距
+	number	设置数字，此数字会与当前的字体尺寸相乘来设置行间距
+	length		设置固定的行间距,负值无效
+	%		基于当前字体尺寸的百分比行间距
+	inherit		规定应该从父元素继承 line-height 属性的值
+
+
+	font 简写属性在一个声明中设置所有字体属性:
+	
+	可设置的属性是（按顺序）： "font-style(字体样式) font-variant(小型大写) font-weight(字体粗细) font-size(字体大小)/line-height(行高) font-family(字体系列)"
+	font-size和font-family的值是必需的。如果缺少了其他值，默认值将被插入，如果有默认值的话。

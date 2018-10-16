@@ -1,0 +1,20 @@
+<type>note<type>
+<lesson>23</lesson>
+<time>20180615</time>
+<title>框架 iframe</title>
+
+<iframe src='' name='' frameboder='' width='' height=''></iframe>
+
+	src=''              定义框架显示文档的URL 注意格式为完整域名(https://www.xxx.xxx/)
+	width=''            定义框架宽度
+	height=''           定义框架高度
+	frameborder='1/0'   是否显示边框线
+
+	name=''             定义框架名称
+	scrolling: yes/no/auto      默认yes, 是否加载滚动条
+
+	单位可不写
+
+页面内链接框架跳转显示----------------------------------------
+<a href='默认打开地址' target='同一个名称'></a>
+<iframe src='跳转打开地址' name='同一个名称' width='' height=''></iframe>

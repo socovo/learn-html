@@ -1,0 +1,22 @@
+<type>note</type>
+<lesson>16</lesson>
+<time>20180608</time>
+<title>透明度</title>
+
+透明度opacity
+
+例:
+
+	opacity: 0; 完全透明
+	opacity: 1; 完全不透明
+
+	与rgba()的alpha透明度的区别
+		opacity具有继承性, 整体控制.
+		alpha没有继承性, 只控制颜色透明度, 不影响其他效果.
+
+transparent用来指定全透明色彩。(即alpha值为零)
+transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值。
+	
+    在CSS1中，transparent被用来作为background-color的一个参数值，用于表示背景透明。
+    在CSS2中，border-color也开始接受transparent作为参数值，《Open eBook(tm) Publication Structure 1.0.1》[OEB101]延伸到color也接受transparent作为参数值。
+    在CSS3中，transparent被延伸到任何一个有color值的属性上。

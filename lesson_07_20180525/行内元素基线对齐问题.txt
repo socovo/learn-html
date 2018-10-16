@@ -1,0 +1,18 @@
+<type>note</type>
+<lesson>add</lesson>
+<title>inline元素基线对齐问题</title>
+<link>http://www.jb51.net/html5/518714.html</link>
+
+任何不是块级元素的可见元素都是内联元素, 包括inline, inline-block
+其表现形式特性是"行布局"形式
+
+内联元素的默认对齐方式是和父级的baseline去对齐
+虽然对齐的是baseline, 但是撑开的高度却是元素整体的高度
+即会多出baseline至bottomline的间隙
+
+解决办法:
+
+	1. 把内联元素变为块级元素
+	2. 修改对齐方式, vertical-align: top;
+	3. 使用float
+	4. 父元素font-size: 0;(不推荐)

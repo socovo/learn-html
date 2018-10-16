@@ -1,0 +1,95 @@
+<type>note</type>
+<lesson>add</lesson>
+<title>CSS轮播</title>
+
+思路:   <ul><li>架构, <input>, <img>, <label>存放于<li>中,
+        使用<label for="input set id"控制<input type="radio" id="input set id">实现单选跳转,
+        配合:checked实现相应的控制效果
+
+实现步骤:
+    1. 图片<img>放置于<li>中
+    2. 在每个<li>第一项添加<input type='radio' name='radio-bth' id='id标识符' checked>
+        name是给radio分组, 可以实现组内单一选中效果
+        如果不进行分组, 默认自成一组, 无法实现组内单选
+        id是给每个单选项分配唯一的标识符
+        checked表示默认被选中的项
+    3. 在每个<li>最后添加两项
+        <label for='上一张id标识符' class='prev'>&lt;</label>
+        <label for='下一张id标识符' class='next'>&gt;</label>
+        for的属性值填写刚刚分配的唯一标识符, 表示此label链接到指定id项
+    
+    上述3步骤就实现了label标签和radio单选绑定的功能
+
+    4. 使用伪类 li input:checked + img 选择当前被选定的图片
+
+        /* 非当前选中项所在图片完全透明 */
+        .bgpic-list img {
+        opacity: 0;
+        transition: opacity 1s;/* 渐隐1s */
+        }
+
+        /* 将当前选中项所在的图片显示出来 */
+        .bgpic-list input:checked + img {
+        opacity: 1;
+        transition: opacity 1s;/* 渐显1s */
+        }
+
+    5. 对label标签进行定位及样式调整, 放置到左右两侧, 垂直居中
+
+        /* label 定位及样式调整 */
+        li label {
+            display: none;/* 所有 label 不显示 */
+            /* 垂直居中定位 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 100px;
+            /* 字体样式 */
+            font-weight: blod;
+            color: white;
+            font-size: 3rem;
+            text-align: center;/* 使 label 水平居中 */
+            cursor: pointer;/* 触发手指效果 */
+            opacity: .5;/* 半透明 */
+            transition: opacity .5s;
+        }
+
+        li label:hover {/* label 滑过的效果 */
+            opacity: 1;
+            text-shadow: 0 0 15px black;/* 阴影效果 */
+        }
+
+        .prev {/* 左 label 定位 */
+            left: 234px;
+        }
+        .next {/* 右 label 定位 */
+            right: 0;
+        }
+
+    6. 隐藏不是当前选中项的label, 可选隐藏单选框
+
+        li input:checked ~ label {/* 当前选中项的 label */
+            display: block;
+        }
+        
+        li input {
+            display: none;/* 可选, 也可以不隐藏对齐进行定位, 可以实现点选切换效果 */
+        }
+
+    7. 最后绝对定位所有<li>项到其父级, 完成叠加
+
+        <li>的父级 {
+            position: relative;
+        }
+        <li> {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    8. 提高当前选中label和所有input的层级, 不然无法作用到当前页
+
+        li input:checked ~ label, li input {
+            z-index: 1;
+        }

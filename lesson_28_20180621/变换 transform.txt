@@ -1,0 +1,49 @@
+<type>note</type>
+<lesson>28</lesson>
+<time>20180621</time>
+<title>变换(transform)</title>
+
+语法:
+
+	通常在每个transform:后只写一个属性值, 并且后面的transform语句会覆盖前面的transform语句.
+	当需要写多个属性值时, 用空格隔开, 书写顺序先写translate后写rotate.
+
+注意:
+
+	对transform进行综合写法的时候, 不同的属性书写顺序会有不同的最终效果.
+
+属性:
+
+	无变换:
+	transform: none;                                定义不进行变换
+
+	旋转:
+	transform: rotate( angle );                     旋转 angle 角度
+	transform: rotate3d( x, y, z, angle );          定义 3d 旋转
+	transform: rotateX( x );                        定义沿着 X轴 的 3d 旋转
+	transform: rotateY( y );                        定义沿着 Y轴 的 3d 旋转
+	transform: rotateZ( z );                        定义沿着 Z轴 的 3d 旋转
+
+	缩放:
+	transform: scale( x );                          定义 2d 缩放
+	transform: scale( x, y );                       定义 2d 缩放(X轴和Y轴缩放比例不同)
+	transform: scale3d( x, y, z );                  定义 3d 缩放
+	transform: scaleX( x );                         定义沿着 X轴 的 2d 缩放
+	transform: scaleY( y );                         定义沿着 Y轴 的 2d 缩放
+	transform: scaleZ( z );                         定义沿着 Z轴 的 3d 缩放
+
+	位移:
+	translate( x, y );                              定义2d位移
+	translate3d( x, y, z );                         定义3d位移
+	translateX( x );                                定义沿着 X轴 的 2d 位移
+	translateY( y );                                定义沿着 Y轴 的 2d 位移
+	translateZ( z );                                定义沿着 Z轴 的 3d 位移
+
+	倾斜:
+	skew( x-angle, y-angle )                        定义沿着 X 和 Y 轴的 2d 倾斜
+	skewX( angle )                                  定义沿着 X 轴的 2d 倾斜
+	skewY( angle )                                  定义沿着 Y 轴的 2d 倾斜
+
+	矩阵:
+	matrix( n, n, n, n, n, n )                      定义 2D 转换, 使用六个值的矩阵
+	matrix3d( n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n )  定义 3D 转换, 使用 16 个值的 4x4 矩阵

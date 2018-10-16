@@ -1,0 +1,81 @@
+<type>note</type>
+<lesson>23</lesson>
+<time>20180615</time>
+<title>表格</title>
+<link>https://www.cnblogs.com/leona-d/p/6125896.html</link>
+
+表格结构:
+
+	<table>                         定义表格
+
+		<caption>表格标题</caption>
+		
+		<thead>                     定义表格的页眉
+			<tr>                    定义表格表头
+				<th>行1, 头列1</th>
+				<th>行1, 头列2</th>
+			</tr>
+		</thead>
+
+		<tbody>                     定义表格的主体
+			<tr>                    定义表格行
+				<td>行2, 列1</td>   定义表格列
+				<td>行2, 列2</td>
+			</tr>
+		</tbody>
+
+		<tfoot>                     定义表格的页脚
+			<tr>                    定义表格行
+				<td>行2, 列1</td>   定义表格列
+				<td>行2, 列2</td>
+			</tr>
+		</tfoot>
+		
+	</table>
+
+表格边距
+
+	<table>支持margin/padding
+	<tr>, <td>, <th>支持padding, 不支持margin.
+	可以通过给<table> border-spacing: X Y;(只给一个值X=Y)属性设置单元格之间的距离.
+
+表格特征
+
+	表格默认内容撑开宽度
+	<th>内容默认加粗, 水平垂直居中
+	<td>内容默认水平居左, 垂直居中
+	默认 内容均分表格水平空间
+
+单元格合并:
+
+	colspan='n'                     向右横向合并单元格
+	rowspan='n'                     向下纵向合并单元格
+
+表格边框:
+
+	border='1/0';					规定表格是否有边框(table属性)
+	border-collapse: collapse;		合并边框线(css属性)
+	cellspacing='px';				规定单元格之间的空白。(table属性)
+	cellpadding='px';				规定单元边沿与其内容之间的空白。(table属性)
+
+总结:
+
+	table属性:
+		border="1";				给整个表格包括每个单元格添加1px的黑色边框线
+		等同于 css属性的 table, table tr th, table tr td { 1px solid black; }
+
+		cellpadding="0";		单元格边距等于0, 默认值是1px.
+		等同于 css属性的 { padding: 0; }
+
+		cellspacing="0";		单元格间距等于0, 默认值是2px.
+		建议使用border-collapse: collapse;去合并边框线并设置颜色而不是设置cellspacing="0", 不然会造成双线重合加粗的问题.
+
+	表格边框样式选择:
+		html行内属性:
+
+			<table border="1" cellpadding="2" cellspacing="0" >
+
+		css样式:
+		
+			table, table tr th, table tr td { border:1px solid #000000; }
+			table { width: 200px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse; }

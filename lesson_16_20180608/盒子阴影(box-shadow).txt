@@ -1,0 +1,9 @@
+<type>note</type>
+<lesson>16</lesson>
+<title>盒子阴影(box-shadow)</title>
+
+box-shadow: X轴偏移位置 Y轴偏移位置 模糊距离(可选) 阴影大小(可选) 颜色(可选);
+
+例:
+
+	box-shadow: 0 0 1000px 50px black;

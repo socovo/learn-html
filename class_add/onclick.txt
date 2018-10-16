@@ -1,8 +1,0 @@
-<type>note</type>
-<class>add</class>
-<title>onclick</title>
-
-需要在新窗口打开使用第一种方法
-1. onClick='window.open("http://www.163.com")'
-需要在本窗口打开使用第二种方法
-2. onClick='location.href="http://www.163.com"'
