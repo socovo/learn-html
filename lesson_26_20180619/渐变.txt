@@ -14,14 +14,14 @@ CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显
     方向: 默认渐变方向是180deg
 		可以使用方位词, 但注意前面要加 'to' :
 	
-			top left
-			top
-			top right
-			right
-			bottom right
-			bottom
-			bootom left
-			left
+			to top left
+			to top
+			to top right
+			to right
+			to bottom right
+			to bottom
+			to bootom left
+			to left
 
 		也可以使用角度值: 0deg-360deg
 
@@ -35,7 +35,7 @@ CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显
     方向/支持透明色彩都与线性渐变一致.
     颜色后的百分比/数值同样是设置颜色的中心位置.
     与普通线性渐变的区别是, 如果第一颜色的起始位置不是0%, 渐变会从起始位置开始填充到100%位置结束,
-	然后接着重复, 在盒子结束边缘直接拼接到起始位置直到0%位置完成整个区域填充.
+	然后接着重复, 在盒子结束边缘直接拼接到起始位置完成整个区域填充.
 
 2. 径向渐变
 
@@ -47,7 +47,7 @@ CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显
 
     渐变中心:
 	
-		位置可以用百分比%或px, 原点坐标是左上角(0,0), 也可以使用方位词, 如
+		位置可以用百分比%或px, 原点坐标是左上角(0,0), 也可以使用方位词, 注意前面要加"at"
 	
 			at top left
 			at top
@@ -65,6 +65,6 @@ CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显
 
     重复渐变 background-image: repeating-radial-gradient();
 
-叠加渐变语法: 注意多个渐变之间用逗号隔开:
+多个方向叠加渐变的语法(如垂直和水平方格线), 注意多个渐变之间用逗号隔开:
 
     background-image: linear-gradient( 方向, 颜色1 百分比/数值, 颜色2 百分比/数值, 颜色n 百分比/数值 ), linear-gradient( 方向, 颜色1 百分比/数值, 颜色2 百分比/数值, 颜色n 百分比/数值 );

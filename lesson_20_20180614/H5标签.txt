@@ -7,14 +7,18 @@ H5结构性标签:
 
     <header></header>       定义文档的头部
     
-    <section>               定义文档中的区块(章节/页眉/页脚)
-        <nav></nav>         定义导航栏
-        <aside></aside>     定义侧边栏/轮播图/广告栏
-        <article></article> 定义文档中的文章部分
-    </section>
+    <main>                  定义文档主体部分
+
+        <section>               定义文档中的区块(章节/页眉/页脚)
+            <nav></nav>         定义导航栏
+            <aside></aside>     定义侧边栏/轮播图/广告栏
+            <article></article> 定义文档中的文章部分
+        </section>
+
         <section></section>
-    <section>
-    </section>
+
+    </main>
+    
     <footer></footer>       定义文档的底部
 
 H5语义化标签:
