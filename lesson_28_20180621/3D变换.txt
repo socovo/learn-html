@@ -1,21 +1,21 @@
 <type>note</type>
 <lesson>28</lesson>
 <time>20180621</time>
-<title>3D</title>
+<title>3D变换</title>
 
 透视:
 
-perspective: none/number;                               为 3D 转换元素定义透视视图并设置视距/景深
-    n 为视距/景深
+perspective: none/px单位数值;                               为 3D 转换元素定义透视视图并设置视距/景深
+    数值呈现3D视图时的视距/景深
 
 transform-style: flat(所有子元素在2D平面呈现)/preserve-3d(所有子元素在3D空间呈现);
 
 使用注意事项:
 
     perspective                         属性给被旋转的元素的父级.
-    transform-style: preserve-3d;       属性给被旋转元素.
-    transiton-duration: time;           属性给被旋转元素.
-    transform-origin: ;                 属性给被旋转元素.
+    transform-style: preserve-3d;       属性给被旋转元素. 3D呈现
+    transform-origin: ;                 属性给被旋转元素. 基点
+    transiton-duration: time;           属性给被旋转元素. 持续时间
 
 perspective属性定义及使用说明:
 
@@ -33,7 +33,7 @@ perspective-origin属性定义及使用说明:
 
 .stage {
     min-width: 1200px;
-    perspective: 800px;
+    perspective: 800px;                 //定义景深距离
 }
 .container {
     position: relative;
@@ -41,9 +41,9 @@ perspective-origin属性定义及使用说明:
     height: 200px;
     margin: 400px auto 0;
     border: 1px solid transparent;
-    transform-style: preserve-3d;
-    transform-origin: 50% 50% 100px;
-    transition-duration: 5s;
+    transform-style: preserve-3d;       //透视图呈现方式为3d
+    transform-origin: 50% 50% 100px;    //3d变换基点
+    transition-duration: 5s;            //变换持续时间
 }
 .mini-container {
     position: relative;

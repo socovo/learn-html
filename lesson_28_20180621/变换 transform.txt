@@ -15,35 +15,83 @@
 属性:
 
 	无变换:
-	transform: none;                                定义不进行变换
+		transform: none;                                定义不进行变换
 
 	旋转:
-	transform: rotate( angle );                     旋转 angle 角度
-	transform: rotate3d( x, y, z, angle );          定义 3d 旋转
-	transform: rotateX( x );                        定义沿着 X轴 的 3d 旋转
-	transform: rotateY( y );                        定义沿着 Y轴 的 3d 旋转
-	transform: rotateZ( z );                        定义沿着 Z轴 的 3d 旋转
+		transform: rotate( angle );                     旋转 angle 角度
+		transform: rotate3d( x, y, z, angle );          定义 3d 旋转
+		transform: rotateX( x );                        定义沿着 X轴 的 3d 旋转
+		transform: rotateY( y );                        定义沿着 Y轴 的 3d 旋转
+		transform: rotateZ( z );                        定义沿着 Z轴 的 3d 旋转
 
 	缩放:
-	transform: scale( x );                          定义 2d 缩放
-	transform: scale( x, y );                       定义 2d 缩放(X轴和Y轴缩放比例不同)
-	transform: scale3d( x, y, z );                  定义 3d 缩放
-	transform: scaleX( x );                         定义沿着 X轴 的 2d 缩放
-	transform: scaleY( y );                         定义沿着 Y轴 的 2d 缩放
-	transform: scaleZ( z );                         定义沿着 Z轴 的 3d 缩放
+		transform: scale( x );                          定义 2d 缩放
+		transform: scale( x, y );                       定义 2d 缩放(X轴和Y轴缩放比例不同)
+		transform: scale3d( x, y, z );                  定义 3d 缩放
+		transform: scaleX( x );                         定义沿着 X轴 的 2d 缩放
+		transform: scaleY( y );                         定义沿着 Y轴 的 2d 缩放
+		transform: scaleZ( z );                         定义沿着 Z轴 的 3d 缩放
 
 	位移:
-	translate( x, y );                              定义2d位移
-	translate3d( x, y, z );                         定义3d位移
-	translateX( x );                                定义沿着 X轴 的 2d 位移
-	translateY( y );                                定义沿着 Y轴 的 2d 位移
-	translateZ( z );                                定义沿着 Z轴 的 3d 位移
+		translate( x, y );                              定义2d位移
+		translate3d( x, y, z );                         定义3d位移
+		translateX( x );                                定义沿着 X轴 的 2d 位移
+		translateY( y );                                定义沿着 Y轴 的 2d 位移
+		translateZ( z );                                定义沿着 Z轴 的 3d 位移
 
 	倾斜:
-	skew( x-angle, y-angle )                        定义沿着 X 和 Y 轴的 2d 倾斜
-	skewX( angle )                                  定义沿着 X 轴的 2d 倾斜
-	skewY( angle )                                  定义沿着 Y 轴的 2d 倾斜
+		skew( x-angle, y-angle )                        定义沿着 X 和 Y 轴的 2d 倾斜
+		skewX( angle )                                  定义沿着 X 轴的 2d 倾斜
+		skewY( angle )                                  定义沿着 Y 轴的 2d 倾斜
 
-	矩阵:
-	matrix( n, n, n, n, n, n )                      定义 2D 转换, 使用六个值的矩阵
+2D矩阵:
+
+	matrix( x轴缩放比例, n, n, y轴缩放比例, x轴偏移距离, y轴偏移距离 )
+		位移：
+
+			matrix(1, 0, 0, 1, tx, ty)  ===  translate(tx + "px", ty + "px")
+			x' = x + tx
+			y' = y + ty 
+
+		缩放：
+
+			matrix(sx, 0, 0, sy, 0, 0)  ===  scale(sx, sy)
+			x' = sx * x 
+			y' = sy * y 
+
+		旋转：需要传入具体的 cos 或者 sin 值。
+
+			matrix(cosθ, sinθ, -sinθ, cosθ, 0, 0)  ===  rotate(θ + "deg")
+			顺序为 CS - SC ；
+			x' = x * cosθ - y * sinθ
+			y' = x * sinθ + y * cosθ
+
+		斜切：
+
+			matrix(1, tan(θy), tan(θx), 1, 0, 0)  === skew(θx + "deg", θy + "deg")
+			x' = x * tan(θx)
+			y' = y * tan(θy)
+
+3D矩阵:
+
 	matrix3d( n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n )  定义 3D 转换, 使用 16 个值的 4x4 矩阵
+
+变换基点:
+
+	属性定义及使用说明:
+
+		transform-origin属性允许您更改变换元素的基点位置。
+		2D变换元素可以改变元素的X和Y轴。 3D变换元素还可以更改元素的Z轴。
+		注意： 使用此属性必须先使用 transform 属性。
+
+	语法:
+
+		transform-origin: x轴位置 y轴位置 (z轴位置);
+
+	x轴/y轴属性值:
+
+		left/center/right/长度值/百分比
+
+	注意:
+
+		z轴属性值只使用长度值, z轴正方向为从屏幕指向外部.
