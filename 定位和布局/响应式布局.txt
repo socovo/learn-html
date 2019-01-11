@@ -1,0 +1,100 @@
+<type>note</type>
+<lesson>add</lesson>
+<time>20180728</time>
+<title>响应式布局</title>
+
+参考:
+
+    https://www.cnblogs.com/2050/p/3877280.html
+
+媒体查询:
+
+    link外部引入:
+
+        在html中可以用<link media=''>进行媒体查询并引入相应外部样式表, 语法:
+
+        <link rel='stylesheet' href='css/name.css' media='[not|only] screen/all [and] ( media feature )'>
+        media是媒体类型, 其取值有all(所有设备)/screen(彩屏设备).
+        media可使用多限定语句(也可以不使用, 之后用media引入的方式), 例:
+
+            media='screen and ( max-width: 1000px )
+            其他关键词还有not/only
+
+    import外部引入:
+
+        在<style>内部样式表中可以使用@import进行媒体查询引入相应外部样式表, 语法:
+
+        @import url('css/name.css')  [not|only] screen/all [and] ( media feature )
+
+        例:
+            @import url('css/name.css')  screen and ( max-width: 1000px );
+            注意: @import需要写在<style>最顶部.
+
+    media引入:
+
+        在外部CSS文件中可以使用@media进行媒体查询, 语法:
+
+        @meida [not|only] screen/all [and] ( media feature ) {
+            css code;
+        }
+
+媒体特性(media feature):
+
+    ( width: 500px )                宽度值
+    ( min-width: 500px )            宽度下限
+    ( max-width: 1000px )           宽度上限
+    ( orientation: landscape )      横屏
+    ( orientation: portrait )       竖屏
+
+viewport视口:
+
+    <meta name='viewport' content=''>
+    视口的作用: 在移动浏览器中, 当页面宽度超出设备, 浏览器内部虚拟的一个页面容器, 将页面容器缩放到设备这么大, 然后展示.
+    width [pixel_value|device-width] 例 width=640
+    height [pixel_value|device-width]
+    initial-scale                               初始比例
+    minimum-scale                               允许缩放的最小比例
+    maximum-scale                               允许缩放的最大比例
+    user-scalable                               是否允许缩放(yes||no或1|0)
+
+    IE8兼容:
+    http-equiv="X-UA-Compatible"是针对IE8新加的一个设置, 对于IE8以外的浏览器是不识别的.
+    Edge模式告诉IE8以最高模式渲染文档, 也就是任何IE版本都以当前版本所支持的最高级标准模式渲染, 避免版本升级造成的影响.
+    简单地说, 就是什么版本IE就用什么版本的标准模式渲染.
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+    使用以下代码强制IE8使用Chrome Frame渲染, 提示用户安装Chrome Frame.
+    <meta http-equiv='X-UA-Compatible' content='chrome=1'>
+    最佳兼容模式方案, 综合考虑以上两种:
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge, chrome=1'>
+
+viewport概念:
+    通俗来讲, viewport就是移动设备浏览器用于显示网页的那一部分区域, 它可能比浏览器可视区域宽度大, 也可能比浏览器可视区域宽度小.
+    默认情况下, 移动设备上的viewport都是比浏览器可视区域大, 这里是因为早期移动设备的分辨率低.
+    一般浏览器默认的viewport为980px或1024px.
+
+px单位问题:
+    在PC端开发时, CSS单位1px对应屏幕上的1px, 但在移动设备上并不如此.
+    早期移动设备分辨率低, 后来技术大大提升了分辨率, 但受限于手持尺寸, 屏幕大小变化相对慢得多.
+    为了实现在不同设备显示的尺寸尽量统一以及用户放大页面的原因, CSS单位的1px可能对应了移动设备上的多个px.
+    window对象的devicePixelRatio定义了物理像素和设备独立像素的比例.
+
+PPK对于移动设备viewport的研究:
+    移动设备有3个viewport:
+        1. 浏览器默认viewport, 浏览器页面容器大小, 即layout viewport, 可以通过document.documentElement.clineWidth获取值.
+        2. 浏览器可视区域大小, 即visual viewport, 可以通过window.innerWidth获取值.
+        3. 移动设备的理想viewport, 即ideal viewport, 不同设备有不同的ideal viewport, 他是屏幕宽度的虚拟值.
+            ideal viewport的意义在于对于那些采用ideal viewport设计的网站, 用户不需要手动缩放,
+            也不会出现横向滚动条的情况下将内容完美的呈现给用户.
+
+viewport控制:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    标签说明:
+        layout viewport = 设备宽度,
+        初始缩放比例 = 1,
+        最大允许缩放比例 = 1,
+        用户是否允许缩放页面 = 否.
+
+        想要把当前viewport设置为设备的ideal viewport, 只需要设置<meta name="viewport" content="width=device-width">
+        也可以使用<meta name="viewport" content="initial-scale=1.0">, 因为这个初始缩放比例的基准就是ideal viewport.
+        上面两条指令, 第一条iphone, ipad不兼容, 第二条IE不兼容, 所以完美写法是:
+            <meta name="viewport" content="width=device-width, initial-sacle=1.0">

@@ -1,0 +1,64 @@
+<type>note</type>
+<lesson>15</lesson>
+<time>20180607</time>
+<title>伪类</title>
+
+CSS伪类是用来添加选择器的一些特殊效果
+
+语法:
+
+    选择器:伪类名 {
+        属性: 属性值;
+    }
+    CSS类也可以使用伪类
+    选择器.class:伪类名 {
+        属性: 属性值;
+    }
+
+anchor伪类:
+
+    链接的不同状态
+    a:link      未访问的链接
+    a:visited   已访问的链接
+    a:hover     鼠标滑过的链接
+    a:active    鼠标点击的链接
+
+    使用时严格按照顺序书写
+
+注意:
+
+    伪类要放在伪元素之前, 例:
+    :hover 要放在 ::after 之前
+
+:nth-child伪类:
+
+	选择父级element1到子级element2节点的第n个元素
+
+:nth-last-child(n)伪类:
+
+	倒序选择父级element1到子级element2节点的第n个元素
+
+例:
+    p:nth-child(3)
+
+    <div>
+        <p></p>
+        <span></apan>
+        <p></p>             此元素被选择到
+        <span></span>
+        <p></p>
+        <p></P>
+    </div>
+
+    注意顺序数字和选择的标签名/类名要对应, 不然无法选择到
+    如 p:nth-child(4) 是没有效果的, 因为第4个不是p标签
+    如果想选择第4个p标签,要使用 p:nth-of-type(4), 即只计算指定类名/标签名的数量
+    同样的 :nth-of-type() 也有倒序 :nth-last-of-type()
+
+:nth-child(odd)伪类:
+
+    选择到父级element1到子级element2节点的奇数个元素
+
+:nth-child(even)伪类:
+
+    选择到父级element1到子级element2节点的偶数个元素

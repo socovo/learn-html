@@ -1,0 +1,37 @@
+﻿<type>note</type>
+<lesson>07</lesson>
+<time>20180525</time>
+<title>垂直对齐方式(vertical-align)</title>
+
+适用范围:
+
+	inline, inline-block
+
+常用属性值:
+
+	baseline:	基线对齐
+	top:		元素顶端与行内最高元素的顶端对齐
+	middle:		将此元素放置在父元素的中部
+	bottom:		元素的低端与行内最低元素的顶端对齐
+	百分比:		百分比对齐, 允许使用负值
+
+默认对齐方式:
+
+	vertical-align: baseline;
+
+防止元素基线对齐的解决办法:
+
+	内联元素的默认对齐方式是和父级的baseline去对齐
+	虽然对齐的是baseline, 但是撑开的高度却是元素整体的高度
+	即会多出baseline至bottomline的间隙
+
+	解决办法:
+
+		1. 把内联元素变为块级元素, 即使用display: block;
+		2. 修改对齐方式, vertical-align: top;
+		3. 使用float
+		4. 父元素font-size: 0;(不推荐)
+
+参考:
+
+	https://blog.csdn.net/it_queen/article/details/54729949

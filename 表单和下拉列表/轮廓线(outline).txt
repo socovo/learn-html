@@ -1,0 +1,13 @@
+<type>note</type>
+<lesson>17</lesson>
+<time>20180609</time>
+<title>轮廓线(outline)</title>
+
+作用范围:
+    <a> <button> <input>
+
+语法:
+    outline: red solid 1px;
+    outline-color: red;
+    outline-style: solid;
+    outline-width: 1px;

@@ -1,8 +1,0 @@
-<lesson>add</lesson>
-<title>CSS继承简表</title>
-
-text-align
-color
-word-spacing
-word-break
-white-spacing
